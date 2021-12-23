@@ -6,9 +6,10 @@ import ir.maktab.ticketsystem.repository.UserRepository;
 import ir.maktab.ticketsystem.repository.abstraction.TicketRepositoryInterface;
 import ir.maktab.ticketsystem.repository.abstraction.TripRepositoryInterface;
 import ir.maktab.ticketsystem.repository.abstraction.UserRepositoryInterface;
-import ir.maktab.ticketsystem.responder.usecase.*;
+
+
 import ir.maktab.ticketsystem.usecase.*;
-import ir.maktab.ticketsystem.responder.usecase.factory.UseCaseFactory;
+import ir.maktab.ticketsystem.usecase.factory.UseCaseFactory;
 import ir.maktab.ticketsystem.usecaserequest.*;
 import ir.maktab.ticketsystem.usecaserequest.factory.UseCaseRequestFactory;
 

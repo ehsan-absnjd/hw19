@@ -1,4 +1,4 @@
-package ir.maktab.ticketsystem.responder.usecase.abstraction;
+package ir.maktab.ticketsystem.usecase.abstraction;
 
 import ir.maktab.ticketsystem.responder.Responder;
 import ir.maktab.ticketsystem.usecaserequest.abstraction.UseCaseRequest;

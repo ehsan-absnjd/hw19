@@ -1,6 +1,6 @@
-package ir.maktab.ticketsystem.responder.usecase.factory;
+package ir.maktab.ticketsystem.usecase.factory;
 
-import ir.maktab.ticketsystem.responder.usecase.abstraction.UseCase;
+import ir.maktab.ticketsystem.usecase.abstraction.UseCase;
 
 import java.util.HashMap;
 import java.util.Map;
