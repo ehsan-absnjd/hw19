@@ -25,15 +25,17 @@ public class Context {
         useCaseClassSet.add(AddTicketUseCase.class);
         useCaseClassSet.add(FindTripsUseCase.class);
         useCaseClassSet.add(RemoveTicketUseCase.class);
-        useCaseClassSet.add(ShowTicketUseCase.class);
+        useCaseClassSet.add(ShowTicketsUseCase.class);
         useCaseClassSet.add(FindUserUseCase.class);
+        useCaseClassSet.add(AddTripUseCase.class);
 
         useCaseRequestClassSet.add(AddUserRequest.class);
         useCaseRequestClassSet.add(AddTicketRequest.class);
         useCaseRequestClassSet.add(FindTripRequest.class);
         useCaseRequestClassSet.add(RemoveTicketRequest.class);
-        useCaseRequestClassSet.add(ShowTicketRequest.class);
+        useCaseRequestClassSet.add(ShowTicketsRequest.class);
         useCaseRequestClassSet.add(FindUserRequest.class);
+        useCaseRequestClassSet.add(AddTripRequest.class);
     }
 
     public static UserRepositoryInterface getUserRepository(){

@@ -8,6 +8,7 @@ import ir.maktab.ticketsystem.usecaserequest.abstraction.UseCaseRequest;
 import ir.maktab.ticketsystem.usecaserequest.RemoveTicketRequest;
 import ir.maktab.ticketsystem.util.Context;
 
+import java.util.HashMap;
 import java.util.Optional;
 
 public class RemoveTicketUseCase implements UseCase {
@@ -24,6 +25,7 @@ public class RemoveTicketUseCase implements UseCase {
         if(ticket.get().getUser().getId()==userId){
             repository.delete(ticket.get());
         }
+        responder.render(new HashMap<>());
     }
 
     @Override

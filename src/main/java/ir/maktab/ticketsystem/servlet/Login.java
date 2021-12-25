@@ -19,7 +19,7 @@ import java.util.Map;
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("/home").forward(request,response);
     }
 
     @Override
@@ -48,7 +48,8 @@ public class Login extends HttpServlet {
                         request.getSession().setAttribute("user", parameters.get("user"));
                         request.getRequestDispatcher("/home").forward(request, response);
                     }else {
-                        request.getRequestDispatcher("LoginResult.jsp").forward(request , response);
+                        request.setAttribute("error" , parameters.get("error"));
+                        request.getRequestDispatcher("Login.jsp").forward(request , response);
                     }
                 } catch (ServletException | IOException e) {
                     e.printStackTrace();

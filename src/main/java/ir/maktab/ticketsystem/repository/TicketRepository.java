@@ -23,8 +23,8 @@ public class TicketRepository extends AbstractRepository<Ticket , Integer> imple
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Ticket> q = cb.createQuery(Ticket.class);
         Root<Ticket> r = q.from(Ticket.class);
-        ParameterExpression<Integer> idParameter = cb.parameter(Integer.class, "name");
-        q.select(r).where(cb.equal(r.get("user").get("id") , id ));
+        ParameterExpression<Integer> idParameter = cb.parameter(Integer.class, "id");
+        q.select(r).where(cb.equal(r.get("user").get("id") , idParameter ));
         return entityManager.createQuery(q).setParameter("id" , id).getResultList();
     }
 }

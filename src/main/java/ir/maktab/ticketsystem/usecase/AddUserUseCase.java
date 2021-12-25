@@ -30,6 +30,7 @@ public class AddUserUseCase implements UseCase {
             user.setPassword(req.getPassword());
             user.setAdmin(req.isAdmin());
             userRepository.saveOrUpdate(user);
+            response.put("user" , user);
             responder.render(response);
         }catch (Exception e){
             response.put("error" , "somwthing went wrong");

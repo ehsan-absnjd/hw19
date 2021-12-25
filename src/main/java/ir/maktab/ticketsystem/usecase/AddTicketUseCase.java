@@ -12,6 +12,7 @@ import ir.maktab.ticketsystem.usecaserequest.abstraction.UseCaseRequest;
 import ir.maktab.ticketsystem.usecaserequest.AddTicketRequest;
 import ir.maktab.ticketsystem.util.Context;
 
+import java.util.HashMap;
 import java.util.Optional;
 
 public class AddTicketUseCase implements UseCase {
@@ -22,7 +23,11 @@ public class AddTicketUseCase implements UseCase {
 
     @Override
     public void process(UseCaseRequest request) {
+        System.out.println("inside use case");
         AddTicketRequest req = (AddTicketRequest) request;
+        System.out.println(req.getUserId());
+        System.out.println(req.getFullName());
+        System.out.println(req.getTripId());
         Optional<User> user = userRepository.findById(req.getUserId());
         Optional<Trip> trip = tripRepository.findById(req.getTripId());
         if (!user.isPresent() || !trip.isPresent()){} //to do something
@@ -32,6 +37,12 @@ public class AddTicketUseCase implements UseCase {
         ticket.setUser(user.get());
         ticket.setTrip(trip.get());
         ticketrepository.saveOrUpdate(ticket);
+        HashMap<String, Object> result = new HashMap<>();
+        String message = ticket.isGender()? "mr. " : "mrs. ";
+        message+= ticket.getFullName() + " your ticket with id: " + ticket.getId() +
+                " for trip : " + ticket.getTrip().getId() + " has been puschased";
+        result.put("message" , message);
+        responder.render(result);
     }
 
     @Override
